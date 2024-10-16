@@ -1,0 +1,10 @@
+.topPanel {
+    width: 100vw;
+    height: 20vw;
+    background-color: #dadce0;
+    padding: 10px;
+}
+
+.button {
+    border-bottom-color: #feff00;
+}

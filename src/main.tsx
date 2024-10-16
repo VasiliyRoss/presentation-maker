@@ -21,6 +21,7 @@ import { changeText } from './store/changeText.ts';
 import { removeBlock } from './store/removeBlock.ts';
 import { removeSlide } from './store/removeSlide.ts';
 import { setSelection } from './store/setSelection.ts';
+import { getEditor } from './store/editor.ts';
 
 console.log('addBlock + emptyEditorType', addBlock(emptyEditorType, 'text'));
 console.log('addBlock + fullEditorType', addBlock(fullEditorType, 'image'));
@@ -62,6 +63,5 @@ console.log('setSelection + emptyEditorType', setSelection(emptyEditorType, { 's
 console.log('setSelection + fullEditorType', setSelection(fullEditorType, { 'slideId': '40' }));
 
 createRoot(document.getElementById('root')!).render(<StrictMode>
-    <App />
-</StrictMode>
-);
+    <App editor={getEditor()}/>
+</StrictMode>);

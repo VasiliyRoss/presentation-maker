@@ -5,8 +5,7 @@ function changeBlockPosition(editor: EditorType,
     blockId: string,
     newPosX: number,
     newPosY: number,
-    newPosZ: number
-): EditorType {
+    newPosZ: number): EditorType {
     const selectedSlide = editor.presentation.slideCollection.find(slide => slide.id === editor.selection.slideId);
     if (!selectedSlide) {
         return editor;
