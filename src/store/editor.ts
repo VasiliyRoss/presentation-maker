@@ -1,11 +1,11 @@
 import { fullEditorType } from './data/filledData.ts';
 import { emptyEditorType } from './data/emptyData.ts';
-import {EditorType} from "./EditorType.ts";
+import { EditorType } from './EditorType.ts';
 
 
 
 let _editor : EditorType= fullEditorType;
-let _handler = null;
+const _handler = null;
 function getEditor() {
     return _editor;
 }

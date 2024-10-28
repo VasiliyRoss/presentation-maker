@@ -4,8 +4,8 @@ import { TextObject } from './TextObject.tsx';
 import { ImageObject } from './ImageObject.tsx';
 import styles from './Slide.module.css';
 
-const SLIDE_WIDTH = 935;
-const SLIDE_HEIGHT = 525;
+const SLIDE_WIDTH = 1251;
+const SLIDE_HEIGHT = 704;
 
 type SlideProps = {
     'slide': SlideType,

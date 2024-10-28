@@ -9,7 +9,7 @@ function TopPanel({ title }: TopPanelProps) {
     return(
         <div className={styles.topPanel}>
             <input className={styles.title} type='text' defaultValue={title} />
-            <div>
+            <div className={styles.toolbar}>
                 <Button text={'Add Slide'} onClick={() => console.log('ADD SLIDE')} className={styles.button}></Button>
                 <Button text={'Remove Slide'} onClick={() => console.log('REMOVE SLIDE')} className={styles.button}></Button>
             </div>

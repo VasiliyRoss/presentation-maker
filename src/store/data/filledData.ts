@@ -19,8 +19,8 @@ const fullTextType : TextType = {
 
 const fullImageType : ImageType = {
     'id': '20',
-    'posX': 10,
-    'posY': 10,
+    'posX': 200,
+    'posY': 100,
     'posZ': 1,
     'height': 100,
     'width': 50,
@@ -39,7 +39,7 @@ const fullSlideType2 : SlideType = {
     'id': '40',
     'preview': '',
     'background': '#FFF',
-    'content': [fullTextType, fullImageType],
+    'content': [fullTextType],
 };
 
 const fullPresentationType : PresentationType = {

@@ -10,6 +10,10 @@
     --topPanelHeight: 70px;
 }
 
+.app {
+    background-color: #F9FBFD;
+}
+
 .container {
     display: flex;
     height: calc(100vh - var(--topPanelHeight));
