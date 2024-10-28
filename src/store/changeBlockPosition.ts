@@ -1,11 +1,18 @@
 import { EditorType } from './EditorType.ts';
 import { SlideType } from './PresentatonType.ts';
 
+interface BlockNewPosition {
+    'blockId': string;
+    'newPosX': number;
+    'newPosY': number;
+    'newPosZ': number;
+}
+
 function changeBlockPosition(editor: EditorType,
-    blockId: string,
-    newPosX: number,
-    newPosY: number,
-    newPosZ: number): EditorType {
+    { blockId,
+        newPosX,
+        newPosY,
+        newPosZ }: BlockNewPosition): EditorType {
     const selectedSlide = editor.presentation.slideCollection.find(slide => slide.id === editor.selection.slideId);
     if (!selectedSlide) {
         return editor;

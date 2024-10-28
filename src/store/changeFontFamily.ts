@@ -1,7 +1,12 @@
 import { EditorType } from './EditorType.ts';
 import { SlideType } from './PresentatonType.ts';
 
-function changeFontFamily(editor: EditorType, blockId: string, newFontFamily: string) : EditorType {
+interface NewFontFamily {
+    'blockId': string,
+    'newFontFamily': string
+}
+
+function changeFontFamily(editor: EditorType, { blockId, newFontFamily }: NewFontFamily) : EditorType {
     const selectedSlide = editor.presentation.slideCollection.find(slide => slide.id === editor.selection.slideId);
     if (!selectedSlide) {
         return editor;

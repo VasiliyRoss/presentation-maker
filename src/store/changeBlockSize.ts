@@ -1,10 +1,18 @@
 import { EditorType } from './EditorType.ts';
 import { SlideType } from './PresentatonType.ts';
 
+interface BlockNewSize {
+    'blockId': string,
+    'newWidth': number,
+    'newHeight': number
+}
+
 function changeBlockSize(editor: EditorType,
-    blockId: string,
-    newWidth: number,
-    newHeight: number): EditorType {
+    {
+        blockId,
+        newWidth,
+        newHeight,
+    }: BlockNewSize): EditorType {
     const selectedSlide = editor.presentation.slideCollection.find(slide => slide.id === editor.selection.slideId);
     if (!selectedSlide) {
         return editor;

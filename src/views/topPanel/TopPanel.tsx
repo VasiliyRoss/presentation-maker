@@ -1,17 +1,44 @@
 import styles from './TopPanel.module.css';
 import Button from '../../components/button/Button.tsx';
+import { dispatch } from '../../store/editor.ts';
+import { changePresentationTitle } from '../../store/changePresentationTitle.ts';
+import * as React from 'react';
+import { addSlide } from '../../store/addSlide.ts';
+import { removeSlide } from '../../store/removeSlide.ts';
+import { addBlock } from '../../store/addBlock.ts';
 
 type TopPanelProps = {
     'title': string,
 };
 
 function TopPanel({ title }: TopPanelProps) {
+
+    function onAddText(){
+        dispatch(addBlock, 'text');
+    }
+
+    function onRemoveSlide() {
+        dispatch(removeSlide);
+    }
+
+    function onAddSlide() {
+        dispatch(addSlide);
+    }
+
+    const onTitleChange: React.ChangeEventHandler = (event) => {
+        dispatch(changePresentationTitle, (event.target as HTMLInputElement).value);
+    };
+
     return(
         <div className={styles.topPanel}>
-            <input className={styles.title} type='text' defaultValue={title} />
+            <input className={styles.title} type='text' defaultValue={title} onChange={onTitleChange} />
             <div className={styles.toolbar}>
-                <Button text={'Add Slide'} onClick={() => console.log('ADD SLIDE')} className={styles.button}></Button>
-                <Button text={'Remove Slide'} onClick={() => console.log('REMOVE SLIDE')} className={styles.button}></Button>
+                <Button text={'Add Slide'} onClick={onAddSlide} className={styles.button}></Button>
+                <Button text={'Remove Slide'} onClick={onRemoveSlide} className={styles.button}></Button>
+                <Button text={'Remove Block'} onClick={onRemoveSlide} className={styles.button}></Button>
+                <Button text={'Add Text'} onClick={onAddText} className={styles.button}></Button>
+                <Button text={'Add Image'} onClick={onRemoveSlide} className={styles.button}></Button>
+                <Button text={'Change Slide Background'} onClick={onRemoveSlide} className={styles.button}></Button>
             </div>
         </div>
     );

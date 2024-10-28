@@ -1,7 +1,12 @@
 import { EditorType } from './EditorType.ts';
 import { SlideType } from './PresentatonType.ts';
 
-function changeFontSize(editor: EditorType, blockId: string, newFontSize: number) : EditorType {
+interface ChangeBlockFontType {
+    'blockId': string,
+    'newFontSize': number
+}
+
+function changeFontSize(editor: EditorType, { blockId, newFontSize }: ChangeBlockFontType) : EditorType {
     const selectedSlide = editor.presentation.slideCollection.find(slide => slide.id === editor.selection.slideId);
     if (!selectedSlide) {
         return editor;

@@ -1,5 +1,6 @@
 import { TextType, ImageType, SlideType, PresentationType } from '../PresentatonType.ts';
 import { EditorType, SelectionType } from '../EditorType.ts';
+import { defaultTitle } from './defaultData.ts';
 
 const emptyTextType : TextType = {
     'id': '1',
@@ -35,7 +36,7 @@ const emptySlideType : SlideType = {
 };
 
 const emptyPresentationType : PresentationType = {
-    'title': 'Empty Presentation',
+    'title': defaultTitle,
     'slideCollection': [emptySlideType],
 };
 

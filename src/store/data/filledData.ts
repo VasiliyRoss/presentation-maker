@@ -31,14 +31,14 @@ const fullImageType : ImageType = {
 const fullSlideType : SlideType = {
     'id': '10',
     'preview': '',
-    'background': '#FFF',
+    'background': '#fbff00',
     'content': [fullTextType, fullImageType],
 };
 
 const fullSlideType2 : SlideType = {
     'id': '40',
     'preview': '',
-    'background': '#FFF',
+    'background': '#ff0000',
     'content': [fullTextType],
 };
 
