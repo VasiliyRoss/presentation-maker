@@ -23,6 +23,9 @@ function Slide({ slide, scale=1, isSelected, className }: SlideProps) {
     if (isSelected) {
         slideStyles.border = '3px solid #0b57d0';
     }
+
+
+
     return(
         <div style={slideStyles} className={styles.slide + ' ' + className}>
             {slide.content.map(slideObject=> {

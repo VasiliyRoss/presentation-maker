@@ -1,20 +1,32 @@
-type BlockType = {
-    'id': string,
-    'posX': number,
-    'posY': number,
-    'posZ': number,
+type SizeType = {
     'height': number,
     'width': number,
 };
 
-type TextType = BlockType & {
+type PositionType = {
+    'x': number,
+    'y': number,
+};
+
+type BlockType = SizeType & PositionType & {
+    'id': string,
+};
+
+type TextDecorationType = {
+    'bold': boolean,
+    'underline': boolean,
+    'lineThrough': boolean,
+};
+
+type TextAlignType = 'left' | 'center' | 'right';
+
+type TextType = BlockType & TextDecorationType & {
     'type': 'text',
     'value': string,
     'fontSize': number,
     'fontFamily': string,
     'fontColor': string,
-    'decoration'?: string,
-    'align': string,
+    'align': TextAlignType,
 };
 
 type ImageType = BlockType & {
@@ -22,14 +34,19 @@ type ImageType = BlockType & {
     'src': string,
 };
 
-type SlideType = {
+type ContentType = ImageType | TextType;
+
+type SlideBackgroundType = {
+    'backgroundType': 'image' | 'fillColor'
+};
+
+type SlideType = SlideBackgroundType & {
     'id': string,
-    'preview': string,
     'background': string,
     'content': Array<TextType | ImageType>,
 };
 
-type BlockContent = 'text' | 'image';
+type SlideContentType = 'text' | 'image';
 
 type PresentationType = {
     'title': string,
@@ -38,9 +55,10 @@ type PresentationType = {
 
 export type {
     PresentationType,
-    BlockType,
+    ContentType,
     SlideType,
     TextType,
     ImageType,
-    BlockContent,
+    SlideContentType,
+    SizeType,
 };

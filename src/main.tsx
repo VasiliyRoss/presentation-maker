@@ -8,23 +8,23 @@ import {
 import {
     fullEditorType,
 } from './store/data/filledData.ts';
-import { addBlock } from './store/addBlock.ts';
+import { addImage } from './store/addImage.ts';
 import { addSlide } from './store/addSlide.ts';
-import { changeBlockPosition } from './store/changeBlockPosition.ts';
-import { changeBlockSize } from './store/changeBlockSize.ts';
+import { changeBlockPosition } from './store/changeContentPosition.ts';
+import { changeBlockSize } from './store/changeContentSize.ts';
 import { changeFontFamily } from './store/changeFontFamily.ts';
 import { changeFontSize } from './store/changeFontSize.ts';
 import { changePresentationTitle } from './store/changePresentationTitle.ts';
 import { changeSlideBackground } from './store/changeSlideBackground.ts';
 import { changeSlidePosition } from './store/changeSlidePosition.ts';
 import { changeText } from './store/changeText.ts';
-import { removeBlock } from './store/removeBlock.ts';
+import { removeBlock } from './store/removeContent.ts';
 import { removeSlide } from './store/removeSlide.ts';
 import { setSelection } from './store/setSelection.ts';
 import { addEditorChangeHandler, getEditor } from './store/editor.ts';
 
-console.log('addBlock + emptyEditorType', addBlock(emptyEditorType, 'text'));
-console.log('addBlock + fullEditorType', addBlock(fullEditorType, 'image'));
+console.log('addBlock + emptyEditorType', addImage(emptyEditorType, 'text'));
+console.log('addBlock + fullEditorType', addImage(fullEditorType, 'image'));
 
 console.log('addSlide + emptyEditorType', addSlide(emptyEditorType));
 console.log('addSlide + fullEditorType', addSlide(fullEditorType));

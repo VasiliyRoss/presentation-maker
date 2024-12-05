@@ -5,7 +5,7 @@ import { defaultSlide } from './data/defaultData.ts';
 
 function addSlide(editor: EditorType): EditorType {
     const slideCollection = editor.presentation.slideCollection;
-    const selectedSlideId = editor.selection.slideId;
+    const selectedSlideId = editor.selection.activeSlideId;
     const currentIndex = slideCollection.findIndex(slide => slide.id === selectedSlideId);
     const newSlide: SlideType = {
         ...defaultSlide,
@@ -18,7 +18,10 @@ function addSlide(editor: EditorType): EditorType {
     ];
 
     return {
-        ...editor,
+        'selection': {
+            ...editor.selection,
+            'activeSlideId': newSlide.id,
+        },
         'presentation': {
             ...editor.presentation,
             'slideCollection': updatedSlideCollection,

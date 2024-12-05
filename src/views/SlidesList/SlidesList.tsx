@@ -15,7 +15,7 @@ type SlidesListPros = {
 function SlidesList({ slides, selection }: SlidesListPros) {
     function onSlideClick(slideId: string) {
         dispatch(setSelection, {
-            'selectedSlideId': slideId,
+            'slideId': slideId,
         });
     }
     return (

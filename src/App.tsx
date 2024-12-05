@@ -9,13 +9,16 @@ type AppProps = {
 };
 
 function App({ editor }: AppProps) {
-    console.log('App', editor);
+    const slideCollection = editor.presentation.slideCollection;
+    const selectedSlideId = editor.selection.slideId;
+    const currentIndex = slideCollection.findIndex(slide => slide.id === selectedSlideId);
+
     return(
         <div className={styles.app} >
             <TopPanel title={editor.presentation.title}></TopPanel>
             <div className={styles.container}>
                 <SlidesList slides={editor.presentation.slideCollection} selection={editor.selection}></SlidesList>
-                <Workspace slide={editor.presentation.slideCollection[0]}></Workspace>
+                <Workspace slide={editor.presentation.slideCollection[currentIndex]}></Workspace>
             </div>
         </div>
     );

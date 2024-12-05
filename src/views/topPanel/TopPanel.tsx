@@ -5,7 +5,8 @@ import { changePresentationTitle } from '../../store/changePresentationTitle.ts'
 import * as React from 'react';
 import { addSlide } from '../../store/addSlide.ts';
 import { removeSlide } from '../../store/removeSlide.ts';
-import { addBlock } from '../../store/addBlock.ts';
+import { addImage } from '../../store/addImage.ts';
+import { removeBlock } from '../../store/removeContent.ts';
 
 type TopPanelProps = {
     'title': string,
@@ -14,7 +15,11 @@ type TopPanelProps = {
 function TopPanel({ title }: TopPanelProps) {
 
     function onAddText(){
-        dispatch(addBlock, 'text');
+        dispatch(addImage, 'text');
+    }
+
+    function onRemoveBlock() {
+        dispatch(removeBlock);
     }
 
     function onRemoveSlide() {
@@ -35,7 +40,7 @@ function TopPanel({ title }: TopPanelProps) {
             <div className={styles.toolbar}>
                 <Button text={'Add Slide'} onClick={onAddSlide} className={styles.button}></Button>
                 <Button text={'Remove Slide'} onClick={onRemoveSlide} className={styles.button}></Button>
-                <Button text={'Remove Block'} onClick={onRemoveSlide} className={styles.button}></Button>
+                <Button text={'Remove Block'} onClick={onRemoveBlock} className={styles.button}></Button>
                 <Button text={'Add Text'} onClick={onAddText} className={styles.button}></Button>
                 <Button text={'Add Image'} onClick={onRemoveSlide} className={styles.button}></Button>
                 <Button text={'Change Slide Background'} onClick={onRemoveSlide} className={styles.button}></Button>

@@ -4,9 +4,8 @@ import { defaultTitle } from './defaultData.ts';
 
 const emptyTextType : TextType = {
     'id': '1',
-    'posX': 10,
-    'posY': 10,
-    'posZ': 1,
+    'x': 10,
+    'y': 10,
     'height': 100,
     'width': 50,
     'type': 'text',
@@ -14,14 +13,16 @@ const emptyTextType : TextType = {
     'fontSize': 10,
     'fontFamily': 'Arial',
     'fontColor': '#000',
+    'bold': true,
+    'underline': true,
+    'lineThrough': true,
     'align': 'left',
 };
 
 const emptyImageType : ImageType = {
     'id': '2',
-    'posX': 10,
-    'posY': 10,
-    'posZ': 1,
+    'x': 200,
+    'y': 100,
     'height': 100,
     'width': 50,
     'type': 'image',
@@ -30,18 +31,21 @@ const emptyImageType : ImageType = {
 
 const emptySlideType : SlideType = {
     'id': '3',
-    'preview': '',
-    'background': '#FFF',
+    'background': '#fff',
+    'backgroundType': 'fillColor',
     'content': [],
 };
 
 const emptyPresentationType : PresentationType = {
     'title': defaultTitle,
-    'slideCollection': [emptySlideType],
+    'slideCollection': [],
 };
 
 const emptySelectionType : SelectionType = {
-    'slideId': null,
+    'selectedSlideIds': [],
+    'activeSlideId': null,
+    'selectedContentIds': [],
+    'selectedObjectType': null,
 };
 
 const emptyEditorType: EditorType = {

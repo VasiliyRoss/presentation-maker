@@ -20,7 +20,9 @@ function addEditorChangeHandler(handler: Function): void {
 function dispatch(modifyFn: Function, payload?: object): void {
     const newEditor = modifyFn(_editor, payload);
     setEditor(newEditor);
+
     console.log(newEditor);
+
     if (editorChangeHandler) {
         editorChangeHandler();
     }

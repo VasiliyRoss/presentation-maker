@@ -3,9 +3,8 @@ import { EditorType, SelectionType } from '../EditorType.ts';
 
 const fullTextType : TextType = {
     'id': '100',
-    'posX': 10,
-    'posY': 10,
-    'posZ': 1,
+    'x': 10,
+    'y': 10,
     'height': 100,
     'width': 50,
     'type': 'text',
@@ -13,15 +12,16 @@ const fullTextType : TextType = {
     'fontSize': 10,
     'fontFamily': 'Arial',
     'fontColor': '#000',
-    'decoration': 'underline',
+    'bold': true,
+    'underline': true,
+    'lineThrough': true,
     'align': 'left',
 };
 
 const fullImageType : ImageType = {
     'id': '20',
-    'posX': 200,
-    'posY': 100,
-    'posZ': 1,
+    'x': 200,
+    'y': 100,
     'height': 100,
     'width': 50,
     'type': 'image',
@@ -30,15 +30,15 @@ const fullImageType : ImageType = {
 
 const fullSlideType : SlideType = {
     'id': '10',
-    'preview': '',
     'background': '#fbff00',
+    'backgroundType': 'fillColor',
     'content': [fullTextType, fullImageType],
 };
 
 const fullSlideType2 : SlideType = {
     'id': '40',
-    'preview': '',
-    'background': '#ff0000',
+    'backgroundType': 'image',
+    'background': '',
     'content': [fullTextType],
 };
 
@@ -48,7 +48,10 @@ const fullPresentationType : PresentationType = {
 };
 
 const fullSelectionType : SelectionType = {
-    'slideId': '10',
+    'selectedSlideIds': ['10'],
+    'activeSlideId': '10',
+    'selectedContentIds': ['100', '20'],
+    'selectedObjectType': fullSlideType,
 };
 
 const fullEditorType: EditorType = {

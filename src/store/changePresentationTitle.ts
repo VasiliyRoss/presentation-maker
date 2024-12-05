@@ -1,12 +1,9 @@
-import { EditorType } from './EditorType.ts';
+import {PresentationType} from "./PresentatonType.ts";
 
-function changePresentationTitle(editor: EditorType, newTitle: string) : EditorType {
+function changePresentationTitle(presentation: PresentationType, newTitle: string) : PresentationType {
     return {
-        ...editor,
-        'presentation': {
-            ...editor.presentation,
-            'title': newTitle,
-        },
+        ...presentation,
+        'title': newTitle,
     };
 }
 
