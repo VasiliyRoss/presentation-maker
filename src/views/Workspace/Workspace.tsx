@@ -1,5 +1,5 @@
 import { SlideType } from '../../store/PresentatonType.ts';
-import { Slide } from '../slide/Slide.tsx';
+import { Slide } from '../Slide/Slide.tsx';
 import styles from './Workspace.module.css';
 
 type WorkspaceProps = {
@@ -9,7 +9,7 @@ type WorkspaceProps = {
 function Workspace({ slide }: WorkspaceProps) {
     return (
         <div className={styles.workspace}>
-            <Slide slide={slide}></Slide>
+            <Slide slide={slide} className={""} isSelected></Slide>
         </div>
     );
 }

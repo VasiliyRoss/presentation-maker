@@ -1,56 +1,42 @@
 import { generateId } from './utils.ts';
-import { defaultText, defaultBlock } from './data/defaultData.ts';
-import { ImageType, SlideType, TextType, SlideContentType, SizeType } from './PresentatonType.ts';
-import { useState, useEffect } from 'react';
+import { ImageType, SlideType, SizeType, ContentType } from './PresentatonType.ts';
 
-interface ImageSource {
-    'imageSource': string,
-}
-
-function getImageSize({ imageSource }: ImageSource): SizeType {
-    const initSizeState: SizeType = {
-        'width': 0,
-        'height': 0,
-    };
-    const [size, setSize] = useState(initSizeState);
-
-    useEffect(() => {
-        if(!imageSource){
-            return;
-        }
-
+function getImageSize(image: string): Promise<SizeType> {
+    return new Promise((resolve, reject) => {
         const img = new Image();
         img.onload = () => {
-            setSize({
+            resolve({
                 'width': img.width,
                 'height': img.height,
             });
         };
         img.onerror = () => {
-            console.error('Ошибка при загрузке изображения');
+            reject(new Error('Не удалось загрузить изображение'));
         };
-    }, [imageSource]);
-
-    return(size);
+        img.src = image;
+    });
 }
 
-function addImage(selectedSlide: SlideType, imageSourse: string): SlideType {
-    const imageSize = getImageSize(imageSourse);
+
+async function addImage(selectedSlide: SlideType, imageSource: string): Promise<SlideType> {
+    const imageSize = await getImageSize(imageSource);
 
     const newImage: ImageType = {
+        'src': imageSource,
         'width': imageSize.width,
         'height': imageSize.height,
-
-
+        'x': 300,
+        'y': 300,
+        'id': generateId(),
+        'type': 'image',
     };
 
-    return ({
-        ...editor,
-        'presentation': {
-            ...editor.presentation,
-            'slideCollection': updatedSlideCollection,
-        },
-    });
+    const updatedContent: ContentType[] = [...selectedSlide.content, newImage];
+
+    return {
+        ...selectedSlide,
+        'content': updatedContent,
+    };
 }
 
 export {

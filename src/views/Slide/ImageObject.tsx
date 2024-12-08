@@ -10,8 +10,8 @@ type ImageObjectProps = {
 function ImageObject({ imageObject, scale=1 }: ImageObjectProps) {
     const imageObjectStyles: CSSProperties = {
         'position': 'absolute',
-        'top': `${imageObject.posX * scale}px`,
-        'left': `${imageObject.posY * scale}px`,
+        'top': `${imageObject.x * scale}px`,
+        'left': `${imageObject.y * scale}px`,
         'width': `${imageObject.width * scale}px`,
         'height': `${imageObject.height * scale}px`,
     };

@@ -8,8 +8,8 @@ type TextObjectProps = {
 function TextObject({ textObject, scale = 1 }: TextObjectProps) {
     const textObjectStyles: CSSProperties = {
         'position': 'absolute',
-        'top': `${textObject.posX * scale}px`,
-        'left': `${textObject.posY * scale}px`,
+        'top': `${textObject.x * scale}px`,
+        'left': `${textObject.y * scale}px`,
         'width': `${textObject.width * scale}px`,
         'height': `${textObject.height * scale}px`,
         'fontSize': `${textObject.fontSize * scale}px`,

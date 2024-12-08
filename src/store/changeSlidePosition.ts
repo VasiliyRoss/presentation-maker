@@ -2,8 +2,8 @@ import { EditorType } from './EditorType.ts';
 
 function changeSlidePosition(editor: EditorType, newPosition: number) : EditorType {
     const slideCollection = editor.presentation.slideCollection;
-    const selectedSlideId = editor.selection.activeSlideId;
-    const currentIndex = slideCollection.findIndex(slide => slide.id === selectedSlideId);
+    const activeSlideId = editor.selection.activeSlideId;
+    const currentIndex = slideCollection.findIndex(slide => slide.id === activeSlideId);
     const updatedSlideCollection = [...slideCollection];
 
     const [slide] = updatedSlideCollection.splice(currentIndex, 1);

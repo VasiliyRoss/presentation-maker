@@ -1,4 +1,4 @@
-import {PresentationType} from "./PresentatonType.ts";
+import { PresentationType } from './PresentatonType.ts';
 
 function changePresentationTitle(presentation: PresentationType, newTitle: string) : PresentationType {
     return {

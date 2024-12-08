@@ -1,4 +1,4 @@
-import {TextType} from './PresentatonType.ts';
+import { TextType } from './PresentatonType.ts';
 
 function changeText(textBlock: TextType, newText: string) : TextType {
     return {

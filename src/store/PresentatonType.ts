@@ -8,7 +8,7 @@ type PositionType = {
     'y': number,
 };
 
-type BlockType = SizeType & PositionType & {
+export type BlockType = SizeType & PositionType & {
     'id': string,
 };
 
@@ -43,14 +43,14 @@ type SlideBackgroundType = {
 type SlideType = SlideBackgroundType & {
     'id': string,
     'background': string,
-    'content': Array<TextType | ImageType>,
+    'content': ContentType[],
 };
 
 type SlideContentType = 'text' | 'image';
 
 type PresentationType = {
     'title': string,
-    'slideCollection': Array<SlideType>,
+    'slideCollection': SlideType[],
 };
 
 export type {

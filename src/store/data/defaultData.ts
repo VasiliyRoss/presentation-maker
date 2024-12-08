@@ -6,30 +6,30 @@ const defaultText: TextType = {
     'value': 'New text area',
     'width': 300,
     'height': 20,
-    'posX': 400,
-    'posY': 700,
-    'posZ': 1,
+    'x': 0,
+    'y': 0,
     'fontSize': 46,
     'fontFamily': 'Arial',
     'fontColor': '#000',
-    'decoration': '',
     'align': 'left',
+    'bold' : false,
+    'underline': false,
+    'lineThrough': false,
 };
 
 const defaultBlock: BlockType = {
     'id': '',
     'width': 100,
     'height': 100,
-    'posX': 0,
-    'posY': 0,
-    'posZ': 1,
+    'x': 0,
+    'y': 0,
 };
 
 const defaultTitle: string = 'Untitled presentation';
 
 const defaultSlide: SlideType = {
     'id': '',
-    'preview': '',
+    'backgroundType': 'fillColor',
     'content': [],
     'background': '#FFF',
 };

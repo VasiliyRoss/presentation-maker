@@ -10,7 +10,7 @@ type AppProps = {
 
 function App({ editor }: AppProps) {
     const slideCollection = editor.presentation.slideCollection;
-    const selectedSlideId = editor.selection.slideId;
+    const selectedSlideId = editor.selection.activeSlideId;
     const currentIndex = slideCollection.findIndex(slide => slide.id === selectedSlideId);
 
     return(

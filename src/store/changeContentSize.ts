@@ -1,4 +1,4 @@
-import {ContentType} from './PresentatonType.ts';
+import { ContentType } from './PresentatonType.ts';
 
 interface newSize {
     'newWidth': number,
