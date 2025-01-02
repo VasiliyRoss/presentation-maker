@@ -60,8 +60,8 @@ console.log('changeText + fullEditorType', changeText(fullTextType, 'New text fo
 console.log('removeBlock + emptyEditorType', removeContent(emptySlideType,'1'));
 console.log('removeBlock + fullEditorType', removeContent(fullSlideType, '100'));
 
-console.log('removeSlide + emptyEditorType', removeSlide(emptyPresentationType, '20'));
-console.log('removeSlide + fullEditorType', removeSlide(fullPresentationType, '40'));
+console.log('removeSlide + emptyEditorType', removeSlide(emptyEditorType));
+console.log('removeSlide + fullEditorType', removeSlide(fullEditorType));
 
 console.log('setSelection + emptyEditorType', setSelection(emptyEditorType, { ...emptySelectionType, 'activeSlideId': '3' }));
 console.log('setSelection + fullEditorType', setSelection(fullEditorType, { ...fullSelectionType, 'activeSlideId': '40' } ));

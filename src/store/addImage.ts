@@ -1,30 +1,12 @@
 import { generateId } from './utils.ts';
-import { ImageType, SlideType, SizeType, ContentType } from './PresentatonType.ts';
+import { ImageType, SlideType, ContentType } from './PresentatonType.ts';
 
-function getImageSize(image: string): Promise<SizeType> {
-    return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.onload = () => {
-            resolve({
-                'width': img.width,
-                'height': img.height,
-            });
-        };
-        img.onerror = () => {
-            reject(new Error('Не удалось загрузить изображение'));
-        };
-        img.src = image;
-    });
-}
-
-
-async function addImage(selectedSlide: SlideType, imageSource: string): Promise<SlideType> {
-    const imageSize = await getImageSize(imageSource);
+function addImage(selectedSlide: SlideType, imageSource: string): SlideType {
 
     const newImage: ImageType = {
         'src': imageSource,
-        'width': imageSize.width,
-        'height': imageSize.height,
+        'width': 300,
+        'height': 300,
         'x': 300,
         'y': 300,
         'id': generateId(),
